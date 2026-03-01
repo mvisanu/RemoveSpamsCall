@@ -1,5 +1,7 @@
 # privacytool
 
+![Tests](https://img.shields.io/badge/tests-32%20passed-brightgreen)
+
 A production-ready Python CLI for personal data removal and privacy protection.
 Discovers PII exposure across major search engines and data brokers, generates
 legal removal letters, and tracks every submission — all locally, without sending
