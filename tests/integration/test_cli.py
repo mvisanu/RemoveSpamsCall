@@ -40,6 +40,27 @@ def test_export_empty(tmp_path, monkeypatch):
     assert result.exit_code == 0
 
 
+def test_export_html(tmp_path, monkeypatch):
+    from privacytool.core import db
+    from privacytool.core.models import TrackedRecord
+
+    db_file = str(tmp_path / "tracker.db")
+    monkeypatch.setenv("PRIVACYTOOL_DB_PATH", db_file)
+    db.init_db(db_file)
+    db.insert_record(db_file, TrackedRecord(target_type="engine", site="google", action_type="deindex"))
+    db.insert_record(db_file, TrackedRecord(target_type="broker", site="whitepages", action_type="optout"))
+
+    out = str(tmp_path / "results")
+    result = runner.invoke(app, ["export", "--format", "html", "--output", out])
+    assert result.exit_code == 0
+
+    html = (tmp_path / "results.html").read_text(encoding="utf-8")
+    assert "Privacy Removal Tracker" in html
+    assert "google" in html
+    assert "whitepages" in html
+    assert "discovered" in html
+
+
 def test_resolve_nonexistent(tmp_path, monkeypatch):
     db_file = str(tmp_path / "tracker.db")
     monkeypatch.setenv("PRIVACYTOOL_DB_PATH", db_file)
