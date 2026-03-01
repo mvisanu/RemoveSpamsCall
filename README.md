@@ -1,6 +1,6 @@
 # privacytool
 
-![Tests](https://img.shields.io/badge/tests-32%20passed-brightgreen)
+[![Tests](https://github.com/mvisanu/RemoveSpamsCall/actions/workflows/tests.yml/badge.svg)](https://github.com/mvisanu/RemoveSpamsCall/actions/workflows/tests.yml)
 
 A production-ready Python CLI for personal data removal and privacy protection.
 Discovers PII exposure across major search engines and data brokers, generates
