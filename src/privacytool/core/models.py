@@ -83,3 +83,25 @@ class BrokerEntry:
     jurisdiction: str = "US"
     category: str = "people-search"
     notes: str = ""
+
+    # --- Auto-mode fields (only used when auto_supported: true) ---
+    # URL template to search for the user's listing.
+    # Supports {first_name}, {last_name}, {city}, {state} interpolation.
+    search_url_template: str = ""
+    # CSS selector for result items on the search results page.
+    result_selector: str = ""
+    # CSS selector for the opt-out form container.
+    form_selector: str = ""
+    # Mapping of field purpose -> comma-separated CSS selector fallback chain.
+    # Supported keys: first_name, last_name, email, city, state, address, phone, dob
+    form_fields: dict = field(default_factory=dict)
+    # CSS selector for the form's submit button.
+    submit_selector: str = ""
+    # CSS selector that appears on the page after a confirmed removal.
+    confirmation_selector: str = ""
+    # Strategy to verify success: "page_text" | "url_change" | "element"
+    confirmation_strategy: str = "page_text"
+    # Substring to look for in page source when confirmation_strategy="page_text".
+    confirmation_text: str = ""
+    # Per-step Selenium timeout in seconds.
+    auto_timeout: int = 15

@@ -160,8 +160,8 @@
   name: Fast People Search
   url: https://www.fastpeoplesearch.com
   opt_out_url: https://www.fastpeoplesearch.com/removal
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: people-search
   steps:
@@ -169,6 +169,16 @@
     - "Search for your name"
     - "Select your listing"
     - "Enter CAPTCHA and email, then confirm"
+  search_url_template: "https://www.fastpeoplesearch.com/name/{first_name}-{last_name}_{city}-{state}"
+  result_selector: "a.t_name"
+  form_selector: "form#removal-form, form.removal, #removal-form"
+  form_fields:
+    full_name: "input[name='name'], input#name, input[placeholder*='name']"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], input[type='submit'], button.submit-btn"
+  confirmation_strategy: "page_text"
+  confirmation_text: "removal request"
+  auto_timeout: 15
 
 - id: "411com"
   name: 411.com
@@ -311,14 +321,25 @@
   name: Nuwber
   url: https://www.nuwber.com
   opt_out_url: https://www.nuwber.com/removal/landing
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: people-search
   steps:
     - "Go to https://www.nuwber.com/removal/landing"
     - "Search for your listing"
     - "Select and confirm removal via email"
+  search_url_template: "https://nuwber.com/person/find?name={first_name}+{last_name}&location={city}+{state}"
+  result_selector: "li.people-item a, a.link-to-profile"
+  form_selector: "form#opt-out-form, form.optout-form, #removal-form"
+  form_fields:
+    first_name: "input[name='firstName'], input#firstName"
+    last_name: "input[name='lastName'], input#lastName"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], .btn-remove, #btnSubmit"
+  confirmation_strategy: "page_text"
+  confirmation_text: "request has been submitted"
+  auto_timeout: 15
 
 - id: clustrmaps
   name: ClustrMaps
@@ -374,14 +395,25 @@
   name: Advanced Background Checks
   url: https://www.advancedbackgroundchecks.com
   opt_out_url: https://www.advancedbackgroundchecks.com/removal
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: background-check
   steps:
     - "Go to https://www.advancedbackgroundchecks.com/removal"
     - "Search for your name and state"
     - "Select your record and submit removal"
+  search_url_template: "https://www.advancedbackgroundchecks.com/people/{first_name}+{last_name}/{state}"
+  result_selector: "ul.people-list li a, a.profile-link"
+  form_selector: "form.removal, #removal-form, form[action*='removal']"
+  form_fields:
+    first_name: "input[name='first'], input[name='firstName'], input#first"
+    last_name: "input[name='last'], input[name='lastName'], input#last"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], input[type='submit'], .submit"
+  confirmation_strategy: "page_text"
+  confirmation_text: "your record has been"
+  auto_timeout: 15
 
 - id: privateye
   name: PrivateEye
@@ -435,27 +467,49 @@
   name: SearchPeopleFree
   url: https://www.searchpeoplefree.com
   opt_out_url: https://www.searchpeoplefree.com/opt-out
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: people-search
   steps:
     - "Go to https://www.searchpeoplefree.com/opt-out"
     - "Search for your name"
     - "Select your listing and follow the opt-out steps"
+  search_url_template: "https://www.searchpeoplefree.com/find/{first_name}-{last_name}/{state}/{city}"
+  result_selector: "h4.name a, a.person-link"
+  form_selector: "#opt-out, form.opt-out-form, .removal-form"
+  form_fields:
+    first_name: "input[name='firstname'], input#fname"
+    last_name: "input[name='lastname'], input#lname"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], input[type='submit']"
+  confirmation_strategy: "page_text"
+  confirmation_text: "opt out request"
+  auto_timeout: 15
 
 - id: truepeoplesearch
   name: True People Search
   url: https://www.truepeoplesearch.com
   opt_out_url: https://www.truepeoplesearch.com/removal
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: people-search
   steps:
     - "Go to https://www.truepeoplesearch.com/removal"
     - "Search for your name"
     - "Select your listing and confirm removal via email"
+  search_url_template: "https://www.truepeoplesearch.com/results?name={first_name}+{last_name}&citystatezip={city}+{state}"
+  result_selector: "div.card-summary a, a.detail-link"
+  form_selector: "#removal-form, form.removal-form, form[action*='remov']"
+  form_fields:
+    first_name: "input[name='firstName'], input#firstName, input[placeholder*='First']"
+    last_name: "input[name='lastName'], input#lastName, input[placeholder*='Last']"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], #submit-btn"
+  confirmation_strategy: "page_text"
+  confirmation_text: "successfully submitted"
+  auto_timeout: 15
 
 - id: arrestfacts
   name: ArrestFacts
@@ -525,14 +579,25 @@
   name: Cyber Background Checks
   url: https://www.cyberbackgroundchecks.com
   opt_out_url: https://www.cyberbackgroundchecks.com/removal
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: background-check
   steps:
     - "Go to https://www.cyberbackgroundchecks.com/removal"
     - "Search for your record"
     - "Select it and confirm removal"
+  search_url_template: "https://www.cyberbackgroundchecks.com/people/{first_name}-{last_name}/{state}"
+  result_selector: "div.people-record a, a.view-details"
+  form_selector: "#removal-form, form[action*='removal'], .removal-form"
+  form_fields:
+    first_name: "input[name='first_name'], input#first_name"
+    last_name: "input[name='last_name'], input#last_name"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], #submit-removal"
+  confirmation_strategy: "page_text"
+  confirmation_text: "removal request received"
+  auto_timeout: 15
 
 - id: smartbackgroundchecks
   name: Smart Background Checks
@@ -551,14 +616,25 @@
   name: RecordsFinder
   url: https://www.recordsfinder.com
   opt_out_url: https://www.recordsfinder.com/opt_out/
-  mode: assisted
-  auto_supported: false
+  mode: auto
+  auto_supported: true
   jurisdiction: US
   category: public-records
   steps:
     - "Go to https://www.recordsfinder.com/opt_out/"
     - "Search for and select your record"
     - "Complete opt-out and verify via email"
+  search_url_template: "https://www.recordsfinder.com/results/people/{first_name}-{last_name}/{city}-{state}"
+  result_selector: "div.result-card a.result-name, a.person-name"
+  form_selector: "#opt-out-form, form.opt_out, form[id*='opt']"
+  form_fields:
+    first_name: "input[name='first_name'], input[placeholder*='First']"
+    last_name: "input[name='last_name'], input[placeholder*='Last']"
+    email: "input[name='email'], input[type='email']"
+  submit_selector: "button[type='submit'], input[type='submit'], .btn-optout"
+  confirmation_strategy: "page_text"
+  confirmation_text: "opt out request submitted"
+  auto_timeout: 15
 
 - id: neighbor_who
   name: NeighborWho

@@ -23,6 +23,16 @@ def act_cmd(
     if dry_run:
         console.print("[yellow][DRY-RUN] No submissions will be made.[/yellow]")
 
+    # Auto mode needs the profile to fill forms
+    profile = None
+    if mode == "auto":
+        passphrase = typer.prompt("Enter master passphrase (needed for auto form-fill)", hide_input=True)
+        try:
+            profile = cfg.load_profile(pii_profile, passphrase)
+        except (FileNotFoundError, ValueError) as exc:
+            console.print(f"[red]Error loading profile: {exc}[/red]")
+            raise typer.Exit(1)
+
     db.init_db(cfg.db_path())
     records = db.get_records(cfg.db_path(), status="pending", target_type=target)
 
@@ -32,7 +42,7 @@ def act_cmd(
 
     console.print(f"[cyan]{len(records)} pending record(s) to act on.[/cyan]")
 
-    # Build a connector map keyed by site name
+    # Build connector map keyed by site name
     from privacytool.connectors.engines.google import GoogleConnector
     from privacytool.connectors.engines.bing import BingConnector
     from privacytool.connectors.engines.duckduckgo import DuckDuckGoConnector
@@ -44,11 +54,19 @@ def act_cmd(
         GoogleConnector(), BingConnector(), DuckDuckGoConnector(),
         YandexConnector(), YahooConnector(),
     ]
-    broker_connectors = load_brokers(mode_override=mode)  # type: ignore[arg-type]
+    broker_connectors = load_brokers(
+        mode_override=mode,  # type: ignore[arg-type]
+        profile=profile,
+    )
 
     connectors_map = {c.name: c for c in engine_connectors + broker_connectors}
 
-    results = run_act(connectors_map, records, cfg.db_path(), dry_run)
+    try:
+        results = run_act(connectors_map, records, cfg.db_path(), dry_run)
+    finally:
+        if mode == "auto":
+            from privacytool.connectors.brokers.webdriver_session import quit_driver
+            quit_driver()
 
     successes = sum(1 for r in results if r.success)
     failures = sum(1 for r in results if not r.success)
