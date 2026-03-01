@@ -1,0 +1,42 @@
+# Secrets & PII — NEVER commit these
+.env
+*.pii.env
+*.pii.enc
+profiles/
+!profiles/.gitkeep
+
+# Tool data
+~/.privacytool/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.xml
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,47 @@
+{{ full_name }}
+{% if address %}{{ address }}{% endif %}
+{{ date }}
+
+To Whom It May Concern,
+{{ target_site }}
+{% if target_url %}Re: {{ target_url }}{% endif %}
+
+Subject: Request for Deletion of Personal Information
+
+Dear Sir or Madam,
+
+I am writing to request the removal of personal information about me from your website
+and any associated databases, including but not limited to the pages listed below.
+
+**Data Subject:** {{ full_name }}
+{% if dob %}**Date of Birth:** {{ dob }}{% endif %}
+{% if emails %}**Email(s):** {{ emails | join(', ') }}{% endif %}
+{% if phones %}**Phone(s):** {{ phones | join(', ') }}{% endif %}
+
+**Specific URLs / records to be removed:**
+{% for url in urls %}
+  - {{ url }}
+{% endfor %}
+
+The continued publication of my personal information causes harm to my privacy and personal
+safety. I request that you:
+
+1. Remove the listed pages and all associated records from your site.
+2. Remove my information from any data feeds, APIs, or partner distributions.
+3. Confirm in writing within **30 days** that the removal has been completed.
+
+Failure to comply may result in a formal complaint to the relevant regulatory authority
+and/or legal action.
+
+---
+**LEGAL DISCLAIMER:** This letter is generated for informational purposes by an automated
+privacy tool. It does not constitute legal advice. The legal basis for this request may vary
+by jurisdiction. Consult a qualified attorney for advice specific to your situation.
+
+Jurisdiction selected: {{ jurisdiction }}
+
+Sincerely,
+{{ full_name }}
+
+---
+Generated {{ date }} by privacytool v{{ version }}

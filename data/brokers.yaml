@@ -1,0 +1,690 @@
+# Data brokers and people-search sites opt-out registry
+# mode: assisted | auto
+# auto_supported: true only for sites with a documented, CAPTCHA-free opt-out API
+
+- id: whitepages
+  name: Whitepages
+  url: https://www.whitepages.com
+  opt_out_url: https://www.whitepages.com/suppression_requests/new
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.whitepages.com/suppression_requests/new"
+    - "Search for your name and city/state"
+    - "Select the listing that belongs to you"
+    - "Click 'Remove me'"
+    - "Verify via phone call or SMS as prompted"
+
+- id: spokeo
+  name: Spokeo
+  url: https://www.spokeo.com
+  opt_out_url: https://www.spokeo.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.spokeo.com/optout"
+    - "Enter the URL of your Spokeo listing"
+    - "Enter your email address"
+    - "Click 'Remove This Listing'"
+    - "Check your email and click the confirmation link"
+
+- id: intelius
+  name: Intelius
+  url: https://www.intelius.com
+  opt_out_url: https://www.intelius.com/opt-out
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.intelius.com/opt-out"
+    - "Search for your record"
+    - "Select your listing and click 'Opt Out'"
+    - "Verify your email address"
+
+- id: beenverified
+  name: BeenVerified
+  url: https://www.beenverified.com
+  opt_out_url: https://www.beenverified.com/app/optout/search
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.beenverified.com/app/optout/search"
+    - "Search for your name and state"
+    - "Select your listing"
+    - "Enter your email and click 'Send Verification Email'"
+    - "Click the link in your email to confirm opt-out"
+
+- id: peoplefinder
+  name: PeopleFinder
+  url: https://www.peoplefinder.com
+  opt_out_url: https://www.peoplefinder.com/optout.php
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.peoplefinder.com/optout.php"
+    - "Search for your name"
+    - "Select your record and submit opt-out"
+
+- id: instantcheckmate
+  name: Instant Checkmate
+  url: https://www.instantcheckmate.com
+  opt_out_url: https://www.instantcheckmate.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.instantcheckmate.com/optout"
+    - "Search for your name, city, and state"
+    - "Select your listing and click 'Remove Record'"
+    - "Verify via email"
+
+- id: truthfinder
+  name: TruthFinder
+  url: https://www.truthfinder.com
+  opt_out_url: https://www.truthfinder.com/opt-out
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.truthfinder.com/opt-out"
+    - "Search for your name and state"
+    - "Select your record"
+    - "Enter your email and verify to remove"
+
+- id: mylife
+  name: MyLife
+  url: https://www.mylife.com
+  opt_out_url: https://www.mylife.com/privacy/privacy-central.pubview
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Visit https://www.mylife.com/privacy/privacy-central.pubview"
+    - "Click 'Remove My Information'"
+    - "Complete the opt-out form"
+    - "Respond to any confirmation email"
+
+- id: radaris
+  name: Radaris
+  url: https://www.radaris.com
+  opt_out_url: https://radaris.com/control/privacy
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://radaris.com/control/privacy"
+    - "Search for your name"
+    - "Click the listing and select 'Remove'"
+    - "Register and confirm your opt-out"
+
+- id: peoplesmartcom
+  name: PeopleSmart
+  url: https://www.peoplesmart.com
+  opt_out_url: https://www.peoplesmart.com/optout-go
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.peoplesmart.com/optout-go"
+    - "Search for your name"
+    - "Follow the opt-out instructions"
+
+- id: usphonebook
+  name: US Phone Book
+  url: https://www.usphonebook.com
+  opt_out_url: https://www.usphonebook.com/opt-out
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: reverse-lookup
+  steps:
+    - "Go to https://www.usphonebook.com/opt-out"
+    - "Search for your listing"
+    - "Select and submit opt-out"
+
+- id: fastpeoplesearch
+  name: Fast People Search
+  url: https://www.fastpeoplesearch.com
+  opt_out_url: https://www.fastpeoplesearch.com/removal
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.fastpeoplesearch.com/removal"
+    - "Search for your name"
+    - "Select your listing"
+    - "Enter CAPTCHA and email, then confirm"
+
+- id:411com
+  name: 411.com
+  url: https://www.411.com
+  opt_out_url: https://www.411.com/privacy
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: directory
+  steps:
+    - "Go to https://www.411.com/privacy"
+    - "Follow the opt-out instructions on the page"
+
+- id: addresses
+  name: Addresses.com
+  url: https://www.addresses.com
+  opt_out_url: https://www.addresses.com/optout.php
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.addresses.com/optout.php"
+    - "Search for your name and submit opt-out"
+
+- id: anywho
+  name: AnyWho
+  url: https://www.anywho.com
+  opt_out_url: https://www.anywho.com/help/privacy
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: directory
+  steps:
+    - "Search for your listing at https://www.anywho.com"
+    - "Use the in-listing opt-out link if available"
+    - "Contact privacy@infousa.com to request removal"
+
+- id: pipl
+  name: Pipl
+  url: https://www.pipl.com
+  opt_out_url: https://pipl.com/personal-information-removal-request
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://pipl.com/personal-information-removal-request"
+    - "Fill in the removal form with your details"
+    - "Submit and monitor for confirmation"
+
+- id: publicrecordsnow
+  name: Public Records Now
+  url: https://www.publicrecordsnow.com
+  opt_out_url: https://www.publicrecordsnow.com/static/view/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: public-records
+  steps:
+    - "Go to https://www.publicrecordsnow.com/static/view/optout"
+    - "Follow the opt-out steps listed on the page"
+
+- id: zabasearch
+  name: ZabaSearch
+  url: https://www.zabasearch.com
+  opt_out_url: https://www.zabasearch.com/block_records/
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.zabasearch.com/block_records/"
+    - "Enter your name and select your listing"
+    - "Complete the opt-out form"
+
+- id: dobsearch
+  name: DOBSearch
+  url: https://www.dobsearch.com
+  opt_out_url: https://www.dobsearch.com/people-finder/pf_optout.php
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.dobsearch.com/people-finder/pf_optout.php"
+    - "Enter your details and submit"
+
+- id: checkpeople
+  name: CheckPeople
+  url: https://www.checkpeople.com
+  opt_out_url: https://www.checkpeople.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.checkpeople.com/optout"
+    - "Search for your name"
+    - "Select your record and follow opt-out prompts"
+
+- id: usatrace
+  name: USA Trace
+  url: https://www.usatrace.com
+  opt_out_url: https://www.usatrace.com/opt-out.seam
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.usatrace.com/opt-out.seam"
+    - "Complete the opt-out request form"
+
+- id: peoplebyname
+  name: People By Name
+  url: https://www.peoplebyname.com
+  opt_out_url: https://www.peoplebyname.com/remove.php
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.peoplebyname.com/remove.php"
+    - "Search for and select your listing"
+    - "Submit the opt-out form"
+
+- id: voterrecords
+  name: VoterRecords.com
+  url: https://voterrecords.com
+  opt_out_url: https://voterrecords.com/faq
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: public-records
+  steps:
+    - "Visit https://voterrecords.com/faq for opt-out instructions"
+    - "Send an email to the contact address with your removal request"
+
+- id: nuwber
+  name: Nuwber
+  url: https://www.nuwber.com
+  opt_out_url: https://www.nuwber.com/removal/landing
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.nuwber.com/removal/landing"
+    - "Search for your listing"
+    - "Select and confirm removal via email"
+
+- id: clustrmaps
+  name: ClustrMaps
+  url: https://www.clustrmaps.com
+  opt_out_url: https://clustrmaps.com/bl/opt-out
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://clustrmaps.com/bl/opt-out"
+    - "Search for your name and submit a removal request"
+
+- id: infotracer
+  name: InfoTracer
+  url: https://www.infotracer.com
+  opt_out_url: https://www.infotracer.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.infotracer.com/optout"
+    - "Search for your record"
+    - "Submit opt-out and verify via email"
+
+- id: backgroundalert
+  name: Background Alert
+  url: https://www.backgroundalert.com
+  opt_out_url: https://www.backgroundalert.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.backgroundalert.com/optout"
+    - "Search for your listing"
+    - "Select and remove your record"
+
+- id: persopo
+  name: Persopo
+  url: https://www.persopo.com
+  opt_out_url: https://www.persopo.com/privacy-policy.html
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Email removal request to support@persopo.com"
+    - "Include your name, city, state, and the URL of your listing"
+
+- id: advancedbackgroundchecks
+  name: Advanced Background Checks
+  url: https://www.advancedbackgroundchecks.com
+  opt_out_url: https://www.advancedbackgroundchecks.com/removal
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.advancedbackgroundchecks.com/removal"
+    - "Search for your name and state"
+    - "Select your record and submit removal"
+
+- id: privateye
+  name: PrivateEye
+  url: https://www.privateeye.com
+  opt_out_url: https://www.privateeye.com/static/view/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.privateeye.com/static/view/optout"
+    - "Follow opt-out instructions"
+
+- id: xlek
+  name: Xlek
+  url: https://www.xlek.com
+  opt_out_url: https://www.xlek.com/optout.php
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.xlek.com/optout.php"
+    - "Fill out the opt-out form with your information"
+
+- id: cubib
+  name: Cubib
+  url: https://www.cubib.com
+  opt_out_url: https://www.cubib.com/search/people/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.cubib.com/search/people/optout"
+    - "Complete the opt-out form"
+
+- id: usinfo
+  name: USinfo.com
+  url: https://www.usinfo.com
+  opt_out_url: https://www.usinfo.com/privacy.html
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: directory
+  steps:
+    - "Visit https://www.usinfo.com/privacy.html"
+    - "Contact them using the provided form to request removal"
+
+- id: searchpeoplefree
+  name: SearchPeopleFree
+  url: https://www.searchpeoplefree.com
+  opt_out_url: https://www.searchpeoplefree.com/opt-out
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.searchpeoplefree.com/opt-out"
+    - "Search for your name"
+    - "Select your listing and follow the opt-out steps"
+
+- id: truepeoplesearch
+  name: True People Search
+  url: https://www.truepeoplesearch.com
+  opt_out_url: https://www.truepeoplesearch.com/removal
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.truepeoplesearch.com/removal"
+    - "Search for your name"
+    - "Select your listing and confirm removal via email"
+
+- id: arrestfacts
+  name: ArrestFacts
+  url: https://www.arrestfacts.com
+  opt_out_url: https://www.arrestfacts.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: criminal-records
+  steps:
+    - "Go to https://www.arrestfacts.com/optout"
+    - "Search for your name"
+    - "Submit the opt-out request"
+
+- id: mugshots
+  name: Mugshots.com
+  url: https://www.mugshots.com
+  opt_out_url: https://www.mugshots.com/opt-out.html
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: criminal-records
+  steps:
+    - "Go to https://www.mugshots.com/opt-out.html"
+    - "Read and follow the removal process outlined"
+    - "Note: fees may apply — consider submitting a legal request instead"
+
+- id: publicrecords360
+  name: PublicRecords360
+  url: https://www.publicrecords360.com
+  opt_out_url: https://www.publicrecords360.com/optout.html
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: public-records
+  steps:
+    - "Go to https://www.publicrecords360.com/optout.html"
+    - "Search for and select your record"
+    - "Submit the removal form"
+
+- id: peoplefinderpro
+  name: People Finder Pro
+  url: https://peoplefinderpro.com
+  opt_out_url: https://peoplefinderpro.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://peoplefinderpro.com/optout"
+    - "Follow the opt-out steps"
+
+- id: idtrue
+  name: IDTrue
+  url: https://www.idtrue.com
+  opt_out_url: https://www.idtrue.com/optout/
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.idtrue.com/optout/"
+    - "Search for your name"
+    - "Submit the opt-out form and verify"
+
+- id: cyberbackgroundchecks
+  name: Cyber Background Checks
+  url: https://www.cyberbackgroundchecks.com
+  opt_out_url: https://www.cyberbackgroundchecks.com/removal
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.cyberbackgroundchecks.com/removal"
+    - "Search for your record"
+    - "Select it and confirm removal"
+
+- id: smartbackgroundchecks
+  name: Smart Background Checks
+  url: https://www.smartbackgroundchecks.com
+  opt_out_url: https://www.smartbackgroundchecks.com/optout
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: background-check
+  steps:
+    - "Go to https://www.smartbackgroundchecks.com/optout"
+    - "Search for your name"
+    - "Submit the opt-out form"
+
+- id: recordsfinder
+  name: RecordsFinder
+  url: https://www.recordsfinder.com
+  opt_out_url: https://www.recordsfinder.com/opt_out/
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: public-records
+  steps:
+    - "Go to https://www.recordsfinder.com/opt_out/"
+    - "Search for and select your record"
+    - "Complete opt-out and verify via email"
+
+- id: neighbor_who
+  name: NeighborWho
+  url: https://www.neighborwho.com
+  opt_out_url: https://www.neighborwho.com/app/optout/search
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.neighborwho.com/app/optout/search"
+    - "Search for your name and state"
+    - "Select your record"
+    - "Verify via email to remove"
+
+- id: people_looker
+  name: PeopleLooker
+  url: https://www.peoplelooker.com
+  opt_out_url: https://www.peoplelooker.com/app/optout/search
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: people-search
+  steps:
+    - "Go to https://www.peoplelooker.com/app/optout/search"
+    - "Search for your name"
+    - "Select record and verify via email to opt out"
+
+- id: clearbit
+  name: Clearbit (business data)
+  url: https://clearbit.com
+  opt_out_url: https://clearbit.com/privacy
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: business-data
+  steps:
+    - "Email privacy@clearbit.com with your opt-out request"
+    - "Include your name and email address"
+    - "Reference CCPA/GDPR right to deletion as applicable"
+
+- id: data_com
+  name: Data.com (Dun & Bradstreet)
+  url: https://www.dnb.com
+  opt_out_url: https://www.dnb.com/utility-pages/ccpa-subject-access-request.html
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: business-data
+  steps:
+    - "Go to https://www.dnb.com/utility-pages/ccpa-subject-access-request.html"
+    - "Submit a deletion or opt-out request"
+
+- id: acxiom
+  name: Acxiom
+  url: https://www.acxiom.com
+  opt_out_url: https://www.acxiom.com/about-acxiom/privacy/us-consumer-opt-out/
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: data-broker
+  steps:
+    - "Go to https://www.acxiom.com/about-acxiom/privacy/us-consumer-opt-out/"
+    - "Click 'Opt Out'"
+    - "Complete and submit the opt-out form"
+
+- id: epsilon
+  name: Epsilon / Conversant
+  url: https://www.epsilon.com
+  opt_out_url: https://www.epsilon.com/us/privacy-policy/opt-out
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: data-broker
+  steps:
+    - "Go to https://www.epsilon.com/us/privacy-policy/opt-out"
+    - "Submit opt-out request"
+
+- id: corelogic
+  name: CoreLogic
+  url: https://www.corelogic.com
+  opt_out_url: https://www.corelogic.com/privacy/ccpa-request/
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: data-broker
+  steps:
+    - "Go to https://www.corelogic.com/privacy/ccpa-request/"
+    - "Select 'Do Not Sell My Personal Information'"
+    - "Complete and submit the request form"
+
+- id: lexisnexis
+  name: LexisNexis
+  url: https://www.lexisnexis.com
+  opt_out_url: https://optout.lexisnexis.com/
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: data-broker
+  steps:
+    - "Go to https://optout.lexisnexis.com/"
+    - "Follow the opt-out form instructions"
+    - "Submit and record your confirmation number"
+
+- id: equifax
+  name: Equifax (marketing opt-out)
+  url: https://www.equifax.com
+  opt_out_url: https://www.optoutprescreen.com
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: credit-bureau
+  steps:
+    - "Go to https://www.optoutprescreen.com"
+    - "Select 'Opt-Out' for pre-screened credit and insurance offers"
+    - "Complete the form (5-year or permanent option available)"
+
+- id: experian_optout
+  name: Experian (marketing opt-out)
+  url: https://www.experian.com
+  opt_out_url: https://www.experian.com/privacy/center.html
+  mode: assisted
+  auto_supported: false
+  jurisdiction: US
+  category: credit-bureau
+  steps:
+    - "Go to https://www.experian.com/privacy/center.html"
+    - "Click 'Opt Out of Marketing'"
+    - "Complete the opt-out steps"

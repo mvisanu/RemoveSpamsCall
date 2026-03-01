@@ -1,0 +1,57 @@
+{{ full_name }}
+{% if address %}{{ address }}{% endif %}
+{{ date }}
+
+Data Controller / Privacy Team
+{{ target_site }}
+{% if target_url %}Re: {{ target_url }}{% endif %}
+
+Subject: Right to Erasure Request under GDPR Article 17
+
+To Whom It May Concern,
+
+I am writing to formally request the erasure of all personal data you hold about me,
+pursuant to Article 17 of the General Data Protection Regulation (EU) 2016/679 ("GDPR").
+
+**Data Subject:** {{ full_name }}
+{% if dob %}**Date of Birth:** {{ dob }}{% endif %}
+{% if emails %}**Email(s) on file:** {{ emails | join(', ') }}{% endif %}
+{% if phones %}**Phone(s) on file:** {{ phones | join(', ') }}{% endif %}
+
+**Grounds for erasure (Article 17(1)):**
+
+[ X ] The personal data are no longer necessary for the purposes for which they were collected
+      or otherwise processed (Art. 17(1)(a)).
+[ X ] I withdraw consent on which processing is based (Art. 17(1)(b)).
+[ X ] I object to the processing pursuant to Article 21 and there are no overriding legitimate
+      grounds (Art. 17(1)(c)).
+[ X ] The personal data have been unlawfully processed (Art. 17(1)(d)).
+
+**Specific data / URLs to be removed:**
+{% for url in urls %}
+  - {{ url }}
+{% endfor %}
+
+Please confirm in writing within **30 days** (as required by Article 12(3)) that:
+1. All personal data have been erased; or
+2. Any specific exemption under Article 17(3) that prevents erasure.
+
+If your organisation has forwarded my data to third parties, please inform each recipient of
+my erasure request, as required by Article 19 GDPR.
+
+Should you fail to comply, I reserve the right to lodge a complaint with the relevant
+supervisory authority and seek judicial remedy under Article 79 GDPR.
+
+---
+**LEGAL DISCLAIMER:** This letter is generated for informational purposes by an automated
+privacy tool. It does not constitute legal advice. Consult a qualified attorney for advice
+specific to your situation. The applicable law depends on your jurisdiction and the location
+of the data controller.
+
+Jurisdiction selected: {{ jurisdiction }}
+
+Sincerely,
+{{ full_name }}
+
+---
+Generated {{ date }} by privacytool v{{ version }}
